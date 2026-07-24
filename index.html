@@ -355,26 +355,6 @@ A.lo=function(){if(confirm('Logout?')){localStorage.clear();location.reload()}};
 A.aC=function(id){setTimeout(function(){var os=gO();for(var i=0;i<os.length;i++)if(os[i].id===id&&os[i].status==='pending'){os[i].status='complete';sO(os);toast('Completed!','g');if(ct==='history')A.rHi();break}},30000)};
 A.ckPn=function(){var os=gO(),ch=false;for(var i=0;i<os.length;i++)if(os[i].status==='pending'){if(Date.now()-new Date(os[i].date).getTime()>=30000){os[i].status='complete';ch=true}else A.aC(os[i].id)}if(ch)sO(os)};
 if(!L('theme'))L('theme','light');aT();A.load();
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDbK_aHZ4nO199u1NgfQDwfmHmLXdLROdo",
-  authDomain: "rusiya-modz.firebaseapp.com",
-  projectId: "rusiya-modz",
-  storageBucket: "rusiya-modz.firebasestorage.app",
-  messagingSenderId: "533565546635",
-  appId: "1:533565546635:web:bd2b36d18c377ed6e9748e"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-console.log("Firebase Connected!");
-</script>
 </script>
 </body>
 </html>
